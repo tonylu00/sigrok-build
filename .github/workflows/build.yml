@@ -302,6 +302,7 @@ jobs:
 
       - name: Update dependencies
         run: |
+          apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16FAAD7AF99A65E2
           sudo apt-get update
           sudo apt-get upgrade -y
           # Version must match the one in ci/appimage/sigrok-appimage-create-appimage.sh
@@ -428,6 +429,7 @@ jobs:
 
       - name: Update dependencies
         run: |
+          apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16FAAD7AF99A65E2
           sudo apt-get update
           sudo apt-get upgrade -y
           # Temp!

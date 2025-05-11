@@ -7,7 +7,8 @@
 
 - Figure out how to trigger on a new tag creation while setting proper make flags and naming the release with the tag
 
-- Figure out how to trigger on PR creation and upload artifacts to PRs
+- Figure out how to trigger on PR creation
+	See https://github.com/flashrom/flashrom/blob/main/.github/workflows/lockdown.yml
 
 - Do the macOS builds need debug/release versions or is only one needed?
 
