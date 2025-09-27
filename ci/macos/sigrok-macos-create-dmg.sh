@@ -36,11 +36,12 @@ QT_DIR=$(brew --cellar)/$QT_VER_PATH
 QT_TRANSLATIONS_DIR=$QT_DIR/share/qt/translations
 
 # Path to Python 3 framework
+BREW_PYTHON_BIN="$(brew --prefix $BREW_PYTHON_VERSION)/bin/python3"
 PYTHON_FRAMEWORK_DIR=$(brew list "$BREW_PYTHON_VERSION" | grep Python.framework/Python | head -n 1 | xargs dirname)
 PYTHON_PREFIX_DIR=$(brew --prefix "$BREW_PYTHON_VERSION")
 
 # Get Python version
-PYTHON_VERSION=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[0:2])))')
+PYTHON_VERSION=$($BREW_PYTHON_BIN -c 'import sys; print(".".join(map(str, sys.version_info[0:2])))')
 
 DMG_BUILD_DIR=./build_dmg
 mkdir $DMG_BUILD_DIR
