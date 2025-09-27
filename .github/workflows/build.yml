@@ -538,7 +538,7 @@ jobs:
       - name: Install dependencies
         run: |
           brew install autoconf automake autoconf-archive pkg-config libtool \
-          libzip libusb libftdi hidapi nettle check doxygen swig \
+          libzip libusb libftdi@1.4 hidapi nettle check doxygen swig \
           glib glibmm@2.66 cmake boost@1.85 sdcc $BREW_PYTHON_VERSION $BREW_QT_VERSION
 
 #      - name: Provide qt also in prefix directory as qt is using a keg
