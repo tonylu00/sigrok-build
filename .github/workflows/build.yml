@@ -581,7 +581,7 @@ jobs:
           cd pulseview/build
           PKG_CONFIG_PATH=$P cmake \
             -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_DIR \
-            -D Boost_DIR=$(brew --prefix boost@1.85) \
+            -D Boost_DIR=$(brew --prefix boost@1.85)/lib/cmake/Boost-1.85.0/ \
             -DCMAKE_BUILD_TYPE=Debug \
             -DDISABLE_WERROR=FALSE \
             -DENABLE_TESTS=FALSE \
