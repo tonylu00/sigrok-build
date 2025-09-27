@@ -539,7 +539,7 @@ jobs:
         run: |
           brew install autoconf automake autoconf-archive pkg-config libtool \
           libzip libusb libftdi hidapi nettle check doxygen swig \
-          glib glibmm@2.66 cmake boost sdcc $BREW_PYTHON_VERSION $BREW_QT_VERSION
+          glib glibmm@2.66 cmake boost@1.85 sdcc $BREW_PYTHON_VERSION $BREW_QT_VERSION
 
 #      - name: Provide qt also in prefix directory as qt is using a keg
 #        run: |
