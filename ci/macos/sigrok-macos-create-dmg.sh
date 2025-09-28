@@ -76,7 +76,7 @@ if [ "$ARTIFACT_BIN_NAME" = "pulseview" ]; then
 	# chmod 644 $FRAMEWORKS_DIR/*boost*
 
 	# Copy QtDBus framework files
-	cp -r $QT_DIR/Frameworks/QtDBus.framework $FRAMEWORKS_DIR/
+	cp -rP $QT_DIR/Frameworks/QtDBus.framework $FRAMEWORKS_DIR/
 fi
 
 "$QT_BIN_DIR"/macdeployqt $ARTIFACT_TITLE.app
@@ -84,7 +84,6 @@ fi
 # Copy Python framework and fix it up.
 cp -R "$PYTHON_FRAMEWORK_DIR" $FRAMEWORKS_DIR
 chmod 644 "$PYTHON_DIR"/lib/libpython*.dylib
-rm -rf "$PYTHON_DIR"/Headers
 rm -rf "$PYTHON_DIR"/bin
 rm -rf "$PYTHON_DIR"/include
 rm -rf "$PYTHON_DIR"/share
@@ -100,7 +99,6 @@ rm -rf "$PYTHON_DIR"/lib/python$PYTHON_VERSION/unittest
 rm -rf "$PYTHON_DIR"/lib/python$PYTHON_VERSION/__pycache__
 rm -rf "$PYTHON_DIR"/lib/python$PYTHON_VERSION/**/__pycache__
 rm -rf "$PYTHON_DIR"/lib/python$PYTHON_VERSION/**/**/__pycache__
-rm -rf "$PYTHON_DIR"/Resources
 
 # Replace paths
 install_name_tool -change \
